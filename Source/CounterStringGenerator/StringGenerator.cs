@@ -16,6 +16,9 @@ namespace CounterStringGenerator
         {
             if (length < 0) length = 0;
 
+            // The StringBuilder has to be cleared before appending new elements
+            _counterString.Clear();
+
             // Allocate a little bit more memory, so that the last number fits in.
             // We'll truncate that part later
             _counterString.EnsureCapacity(length + 10);
